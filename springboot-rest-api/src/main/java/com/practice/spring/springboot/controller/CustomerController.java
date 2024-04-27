@@ -44,4 +44,9 @@ public class CustomerController {
     public Customer createCustomer(@RequestBody Customer customer){
         return customer;
     }
+    @PutMapping("updateCustomer/{customerId}g")
+    @ResponseStatus(HttpStatus.OK)
+    public Customer updateCustomer(@PathVariable int customerId,Customer customer){
+        return  customer;
+    }
 }
