@@ -46,7 +46,12 @@ public class CustomerController {
     }
     @PutMapping("updateCustomer/{customerId}g")
     @ResponseStatus(HttpStatus.OK)
-    public Customer updateCustomer(@PathVariable int customerId,Customer customer){
+    public Customer updateCustomer(@PathVariable int customerId,@RequestBody Customer customer){
         return  customer;
+    }
+    @DeleteMapping("deleteCustomer/{customerId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public Customer deleteCustomer(@PathVariable int customerId,@RequestBody Customer customer){
+        return customer;
     }
 }
