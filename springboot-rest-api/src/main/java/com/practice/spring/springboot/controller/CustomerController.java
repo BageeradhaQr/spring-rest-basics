@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("customers/")
+@RequestMapping("customers")
 public class CustomerController {
 
     //how to return java object as a Json object to client as a HttpResponse
