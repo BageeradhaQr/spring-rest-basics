@@ -2,6 +2,7 @@ package com.practice.spring.springboot.controller;
 
 import com.practice.spring.springboot.beans.Customer;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -12,12 +13,12 @@ public class CustomerController {
 
     //how to return java object as a Json object to client as a HttpResponse
     @GetMapping("get-customer")
-    public Customer getCustomer(){
+    public ResponseEntity<Customer> getCustomer(){
         Customer customer = new Customer(1,
                 "Bageeradha",
                 "Vajja",
                 "vajjabageeradha@gmail.com");
-        return  customer;
+        return  new ResponseEntity<>(customer,HttpStatus.OK);
     }
 
     //how to return list of customers as json to client
