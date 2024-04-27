@@ -9,9 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@RequestMapping("customers/")
 public class CustomerController {
 
     //how to return java object as a Json object to client as a HttpResponse
+    //@RequestMapping(method = RequestMethod.GET). == @GetMapping
     @GetMapping("get-customer")
     public ResponseEntity<Customer> getCustomer(){
         Customer customer = new Customer(1,
@@ -32,7 +34,7 @@ public class CustomerController {
     }
 
     //Spring boot REST API with path variable
-    @GetMapping("customers/{customerId}")
+    @GetMapping("{customerId}")
     public Customer getCustomerById(@PathVariable int customerId){
         return  new Customer(customerId,"Bageeradha","Vajja","vajjabageeradha@gmail.com");
     }
